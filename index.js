@@ -77,10 +77,42 @@ printReport(totalInventory)
         }
     }
     console.log(replenishList)
-    return `Place Order for: ${replenishList.join(' ')}`
+    return `Place Order for: ${replenishList.join(', ')}`
  }
- printReport(totalInventory)
- printReport(replenish)
+
+ function loopAndUpdate(array, updaterFoo) {
+    const updatedArray = [];
+    for(let item of array){
+        console.log(array)
+        console.log(updatedArray)
+        updatedArray.push(item.title)
+
+    }
+    return updatedArray
+ }
+// Return an array of titles
+ function titles(item){
+    return item.title
+
+ }
+
+ //Return an array of prices
+ function prices(item){
+    return item.price
+ }
+ // return array of inventory
+ function inventory(item){
+    return item.inventory
+ }
+ function halfOff(item){
+    let itemCopy = Object.assign({}, item)
+    itemCopy.price = Math.floor(itemCopy.price/2)
+    return itemCopy
+ }
+ console.log(newBooks.map(halfOff));
+ //console.log(loopAndUpdate(newBooks, halfOff))
+ //printReport(totalInventory)
+ //printReport(replenish)
 //handleBooks(loopThroughArray)
 //handleBooks(capitalizeArray)
 //console.log(printHello(name))
